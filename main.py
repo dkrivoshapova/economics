@@ -18,29 +18,29 @@ y1 = i / (py * (1 + q / p))
 print('Оптимальный набор потреителя до изменения цен', x1, y1)
 # определение  оптимального набора после изменения цен
 x3 = i / (px2 * (1 + p / q))
-y3 = i / (py * (1 + q / p))
+y3 = i - px2 * x3
 print('Оптимальный набор потреителя до изменения цен', x3, y3)
 # определение промежуточного набора
 i1 = x1 * px2 + y1 * py
 x2 = i1 / (px2 * (1 + p / q))
 y2 = i1 / (py * (1 + q / p))
-z=x3-x1
-d=x2-x3
-print('Эффект замены ', x3-x1)
-print('Эффект дохода ', x2-x3)
-if px>px2:
-    if z>0 and d> 0:
+z = x3 - x1
+d = x2 - x3
+print('Эффект замены ', x3 - x1)
+print('Эффект дохода ', x2 - x3)
+if px > px2:
+    if z > 0 and d > 0:
         print('Нормальный товар')
-    elif z>0 and d<0:
-        if abs(z)>abs(d):
+    elif z > 0 and d < 0:
+        if abs(z) > abs(d):
             print('низший товар')
         else:
             print('товар Гиффена')
 else:
-    if z<0 and d< 0:
+    if z < 0 and d < 0:
         print('Нормальный товар')
-    elif z<0 and d>0:
-        if abs(z)>abs(d):
+    elif z < 0 and d > 0:
+        if abs(z) > abs(d):
             print('низший товар')
         else:
             print('товар Гиффена')
